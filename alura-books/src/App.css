@@ -10,35 +10,3 @@
     justify-content: center;
 }
 
-li{
-    list-style: none;
-}
-
-.menu{
-    display: flex;
-}
-
-.option{
-    font-size: 16px;
-    display: flex;
-    
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    height: 100%;
-    min-width: 120px;
-
-    padding: 0 5px;
-    cursor: pointer;
-}
-
-.icons{
-    display: flex;
-    align-items: center;
-}
-
-.icon {
-    margin-right: 40px;
-    width: 25px;
-}

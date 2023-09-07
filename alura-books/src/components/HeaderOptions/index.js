@@ -1,3 +1,4 @@
+import './styles.css'
 
 const optionsText = ['CATEGORIAS', 'MINHA ESTANTE', 'FAVORITOS']
 

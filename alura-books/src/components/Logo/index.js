@@ -4,8 +4,8 @@ import './styles.css';
 function Logo(){
     return (
         <div className="logo">
-          <img src={logo} alt="Logo da Alura Books"/>
-          <p> <strong> Alura </strong> Books </p>
+          <img className='logo-img' src={logo} alt="Logo da Alura Books"/>
+          <p> <strong> Alura</strong>Books </p>
         </div>
     );
 }

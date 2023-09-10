@@ -33,6 +33,7 @@ function LastRelease(){
                 ))}
             </NewBooksContainer>
             <RecommendCard title="Angular" description="não sei" img={imagemLivro} />
+            <RecommendCard title="React" description="não sei" img={imagemLivro} />
         </LastReleaseContainer>
     )
 }

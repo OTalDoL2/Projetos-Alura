@@ -2,6 +2,7 @@ import Input from '../Input'
 import styled from 'styled-components'
 import { useState } from 'react'
 import { livros } from './searchData'
+import { Title } from '../Titulo'
 
 const SearchContainer = styled.section`
     background-image: linear-gradient(90deg, #fd8325, #cc490d);
@@ -12,12 +13,6 @@ const SearchContainer = styled.section`
     width: 100%;
 `
 
-const Title = styled.h2`
-    color: #FFF;
-    font-size: 36px;
-    text-align: center;
-    width: 100%;
-`
 
 const Subtitle = styled.h3`
     font-size: 16px;
@@ -31,7 +26,7 @@ function SearchBar(){
 
     return(
         <SearchContainer>
-            <Title>Já sabe por onde começar?</Title>
+            <Title fontSize="36px" color="#fff">Já sabe por onde começar?</Title>
             <Subtitle>Encontre seu livro em nossa estante.</Subtitle>
             <Input type="text" placeholder="Escreva sua próxima leitura" onBlur={e => {
                 const typedText = e.target.value

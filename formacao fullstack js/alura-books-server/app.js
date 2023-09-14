@@ -1,5 +1,6 @@
 // Importando o express
 const express = require("express")
+const bookRoute = require("./routes/books.js")
 
 // Criando uma aplicação Express
 const app = express()
@@ -11,6 +12,8 @@ const port = 8000
 app.get('/', (req, res) => {
     res.send("Hello World!")
 })
+
+app.use('/livros', bookRoute)
 
 app.listen(port, () => {
     console.log(`Running on port ${port}`)

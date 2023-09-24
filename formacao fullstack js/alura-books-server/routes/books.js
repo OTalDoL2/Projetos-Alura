@@ -1,9 +1,12 @@
 const {Router} = require("express")
-const {getBooks} = require("../controller/book")
+const {getBooks, getBook} = require("../controller/book")
 
 const router = Router()
 
 router.get('/', getBooks)
+
+// passa um item como id
+router.get('/:id', getBook)
 
 router.post('/', (req, res) => {
     res.send("Você fez uma requisição do tipo post")

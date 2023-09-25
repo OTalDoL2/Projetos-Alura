@@ -4,6 +4,7 @@ const bookRoute = require("./routes/books.js")
 
 // Criando uma aplicação Express
 const app = express()
+app.use(express.json())
 
 // Configurando a porta que será usada na aplicação
 const port = 8000

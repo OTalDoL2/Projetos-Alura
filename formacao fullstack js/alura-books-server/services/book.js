@@ -11,7 +11,15 @@ function getBookById(id){
     return filteredBook
 }
 
+function insertBook(newBook){
+    const books = JSON.parse(fs.readFileSync('books.json'));
+    // Esses 3 pontos, conhecidos como spread, são utilizados para representar os dados encontrados na lista
+    const newBooksList = [...books, newBook]
+    fs.writeFileSync("books.json", JSON.stringify(newBooksList))
+}
+
 module.exports = { 
     getAllBooks,
-    getBookById
+    getBookById,
+    insertBook
 }

@@ -39,9 +39,15 @@ function getBook(req, res) {
 function postBook(req,res) {
     try {
         const newBook = req.body;
-        insertBook(newBook);
-        res.status(201); // Status 201 => objeto criado
-        res.send("Livro inserido com sucesso!");
+        if(req.body.nome){
+            insertBook(newBook);
+            res.status(201); // Status 201 => objeto criado
+            res.send("Livro inserido com sucesso!");
+        }
+        else{
+            res.status(422)
+            res.send("O nome do livro é obrigatório")
+        }
     } catch (error) {
         res.status(500);
         res.send(error.message);

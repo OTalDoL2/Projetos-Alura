@@ -57,5 +57,6 @@ module.exports = {
     getAllBooks,
     getBookById,
     insertBook,
-    modifyBook
+    modifyBook, 
+    deleteBookById
 }

@@ -1,22 +1,17 @@
-from flask import Flask, render_template, request
-from Jogo import Jogo
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
 app = Flask(__name__)
+app.config.from_pyfile('config.py')
 
-@app.route('/')
-def teste():
-    jogo1= Jogo('Skyrim', 'RPG', 'PC')
-    jogo2= Jogo('Tetris', 'Puzzle', 'Atari')
-    jogo3= Jogo('God of War', 'Rack n Slash', 'PS2')
-    lista_jogos = [jogo1, jogo2, jogo3]
-    return render_template('index.html', jogos=lista_jogos)
+db = SQLAlchemy(app)
 
-@app.route('/novo')
-def novo():
-    nome = request.form('nome')
-    categoria = request.form('categoria')
-    console = request.form('console')
-    jogo = Jogo(nome, categoria, console)
-    lista_jogos.append(jogo)
-    return render_template('index.html', jogos=lista_jogos)
+from views import *
 
-app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+
+
+

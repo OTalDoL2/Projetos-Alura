@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 import { livros } from './lastReleaseData'
-import {Title} from '../Titulo'
+import { Title } from '../Titulo'
 import RecommendCard from '../RecommendCard'
 import imagemLivro from '../../assets/livro2.png'
+import React from 'react'
 
 const LastReleaseContainer = styled.section`
     background-color: #EBECEE;
@@ -19,14 +20,13 @@ const NewBooksContainer = styled.div`
     cursor: pointer;
 `
 
-function LastRelease(){
-    return(
+function LastRelease() {
+    return (
         <LastReleaseContainer>
             {/* <Titulo texto="Últimos Lançamentos" /> */}
-            <Title fontSize="36px" 
-                   alignText="center">
+            <Title>
                 Últimos Lançamentos
-                </Title>
+            </Title>
             <NewBooksContainer>
                 {livros.map(livro => (
                     <img src={livro.src} alt="" />

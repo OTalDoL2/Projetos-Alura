@@ -1,5 +1,6 @@
 import {Title} from '../Titulo'
 import styled from "styled-components"
+import React from 'react'
 
 const Card = styled.div`
     align-items: center;

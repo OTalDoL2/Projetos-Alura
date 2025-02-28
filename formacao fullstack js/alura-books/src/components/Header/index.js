@@ -2,6 +2,9 @@ import Logo from '../Logo';
 import HeaderOptions from '../HeaderOptions';
 import HeaderIcons from '../HeaderIcons'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom';
+import React from 'react';
+
 
 const AppHeader = styled.header`
     background-color: #ffffff;
@@ -9,13 +12,14 @@ const AppHeader = styled.header`
     justify-content: center;
 `
 
-function Header(){
-    return(
+function Header() {
+    return (
         <AppHeader>
-            <Logo />
-
+            <Link to="/">
+                <Logo />
+            </Link>
             <HeaderOptions />
-            <HeaderIcons />           
+            <HeaderIcons />
         </AppHeader>
     )
 }

@@ -1,6 +1,7 @@
 import perfil from '../../assets/perfil.svg'
 import sacola from '../../assets/sacola.svg'
 import styled from 'styled-components'
+import React from 'react'
 
 const icons = [perfil, sacola]
 

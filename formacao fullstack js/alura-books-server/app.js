@@ -1,6 +1,7 @@
 // Importando o express
 const express = require("express")
 const bookRoute = require("./routes/books.js")
+const favoriteRoute = require("./routes/favorites.js")
 const cors = require("cors")
 
 // Criando uma aplicação Express
@@ -12,6 +13,7 @@ app.use(cors({origin : "*"}))
 const port = 8000
 
 app.use('/livros', bookRoute)
+app.use('/favorites', favoriteRoute)
 
 app.listen(port, () => {
     console.log(`Running on port ${port}`)

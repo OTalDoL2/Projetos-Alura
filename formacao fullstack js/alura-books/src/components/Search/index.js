@@ -22,15 +22,30 @@ font-size: 16px;
     margin-bottom: 40px;
     `
 
+const Result = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+
+    p {
+        width: 200px;
+    }
+
+    img {
+        width: 100px;
+    }
+
+    &:hover {
+        border: 1px solid white;
+    }
+`
+
 
 function SearchBar() {
     const [searchedBooks, setSearchedBooks] = useState([])
     const [books, setBooks] = useState([])
-
-    // useEffect(() => {
-    //     let booksAPI = getBooks()
-    //     setBooks(booksAPI)
-    // }, [])
 
     useEffect(() => {
         fetchBooks()
@@ -54,10 +69,10 @@ function SearchBar() {
                     setSearchedBooks(searchResult)
                 }} />
             {searchedBooks.map(livro => (
-                <div key={livro.id}>
+                <Result  key={livro.id}>
                     <p>{livro.nome}</p>
                     <img src={livroImage} alt={livro.nome} />
-                </div>
+                </Result>
             ))}
         </SearchContainer>
     )

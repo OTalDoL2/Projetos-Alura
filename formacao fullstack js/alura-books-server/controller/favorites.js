@@ -12,7 +12,7 @@ function getFavorites(req, res) {
 
 function addInFavorites(req, res) {
     try {
-        newBook = req.params.id
+        id = req.params.id
         insertBookInFavorite(id)
         res.status(201)
         res.send("Livro inserido aos favoritos!")

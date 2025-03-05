@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { useEffect, useState } from 'react'
 import { Title } from '../Titulo'
 import { getBooks } from '../../services/books'
+import { postFavorites } from '../../services/favorites'
 import React from 'react'
 import livroImage from '../../assets/livro.png'
 
@@ -56,6 +57,11 @@ function SearchBar() {
         setBooks(livrosDaAPI)
     }
 
+    async function insertFavorite(id){
+        await postFavorites(id)
+        console.log(`Livro com o id ${id} inserido!`)
+    }
+
 
     return (
         <SearchContainer>
@@ -69,7 +75,7 @@ function SearchBar() {
                     setSearchedBooks(searchResult)
                 }} />
             {searchedBooks.map(livro => (
-                <Result  key={livro.id}>
+                <Result onClick={() => insertFavorite(livro.id)} key={livro.id}>
                     <p>{livro.nome}</p>
                     <img src={livroImage} alt={livro.nome} />
                 </Result>
